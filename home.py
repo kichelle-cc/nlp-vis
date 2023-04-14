@@ -23,13 +23,13 @@ mapping = {'0_doc-topics-pct.json':{
     the sentences inside the topics to see if they were 
     assigned correctly and whether they make sense.'''
 },
-'4_similarity-matrix.json':{
+'3_similarity-matrix.json':{
     'title':'Topic Similarity Matrix',
     'caption':'''A matrix indicating how similar certain 
     topics are to each other by simply applying cosine
     similarities.'''
 },
-'3_topic-distance.json':{
+'1_topic-distance.json':{
     'title':'Intertopic Distance Map',
     'caption':'''A representation of the topics in 2D such that
     we can create an interactive view. The slider can select the topic which 
