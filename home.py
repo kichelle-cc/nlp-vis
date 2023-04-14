@@ -42,7 +42,7 @@ for fig in os.listdir(prefix+path):
     st.divider()
     st.markdown(f"<h2 style='text-align: center; color: grey;'>{mapping[fig]['title']}</h1>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align: center; color: grey;'>{mapping[fig]['caption']}</p>", unsafe_allow_html=True)
-    with open(prefix+path+'\\'+fig) as f:
+    with open(prefix+path+'/'+fig) as f:
         data = json.load(f)
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
