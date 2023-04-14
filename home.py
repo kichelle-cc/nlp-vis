@@ -38,8 +38,7 @@ mapping = {'0_doc-topics-pct.json':{
 }}
 
 st.container()
-st.write(os.listdir(prefix+path))
-for fig in os.listdir(prefix+path):
+for fig in sorted(os.listdir(prefix+path)):
     st.divider()
     st.markdown(f"<h2 style='text-align: center; color: grey;'>{mapping[fig]['title']}</h1>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align: center; color: grey;'>{mapping[fig]['caption']}</p>", unsafe_allow_html=True)
