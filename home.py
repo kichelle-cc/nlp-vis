@@ -11,7 +11,7 @@ in N initial topics. These were fine-tuned and merged based on cosine similarity
 
 
 prefix = os.getcwd()
-path = '\\plotly-figs'
+path = '/plotly-figs'
 mapping = {'doc-topics-pct.json':{
     'title':'Document Composotion Percent',
     'caption':'''A view of the composition of each document by percent.
