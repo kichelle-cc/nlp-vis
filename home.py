@@ -2,7 +2,7 @@ import os
 import openai
 from PIL import Image
 import streamlit as st
-openai.api_key = st.secrets["OPEN_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 from llama_index import LLMPredictor, PromptHelper, GPTSimpleVectorIndex
 from llama_index.logger import LlamaLogger
 from langchain import OpenAI
