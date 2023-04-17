@@ -11,25 +11,25 @@ in N initial topics. These were fine-tuned and merged based on cosine similarity
 
 
 prefix = os.getcwd()
-path = '\\plotly-figs'
-mapping = {'doc-topics-pct.json':{
+path = '/plotly-figs'
+mapping = {'0_doc-topics-pct.json':{
     'title':'Document Composotion Percent',
     'caption':'''A view of the composition of each document by percent.
       Hover over each bar to identify the major contributors.'''
 },
-'sent-topics.json':{
+'2_sent-topics.json':{
     'title':'Sentences inside Topics',
     'caption':'''A fine-grained view where we can visualize 
     the sentences inside the topics to see if they were 
     assigned correctly and whether they make sense.'''
 },
-'similarity-matrix.json':{
+'3_similarity-matrix.json':{
     'title':'Topic Similarity Matrix',
     'caption':'''A matrix indicating how similar certain 
     topics are to each other by simply applying cosine
     similarities.'''
 },
-'topic-distance.json':{
+'1_topic-distance.json':{
     'title':'Intertopic Distance Map',
     'caption':'''A representation of the topics in 2D such that
     we can create an interactive view. The slider can select the topic which 
@@ -38,11 +38,11 @@ mapping = {'doc-topics-pct.json':{
 }}
 
 st.container()
-for fig in os.listdir(prefix+path):
+for fig in sorted(os.listdir(prefix+path)):
     st.divider()
     st.markdown(f"<h2 style='text-align: center; color: grey;'>{mapping[fig]['title']}</h1>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align: center; color: grey;'>{mapping[fig]['caption']}</p>", unsafe_allow_html=True)
-    with open(prefix+path+'\\'+fig) as f:
+    with open(prefix+path+'/'+fig) as f:
         data = json.load(f)
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
@@ -70,4 +70,3 @@ for fig in os.listdir(prefix+path):
         ),
         #    width=1100,
            use_container_width=True,)
-        
