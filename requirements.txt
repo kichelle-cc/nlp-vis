@@ -1,2 +1,6 @@
 streamlit==1.21.0
 plotly==5.14.1
+langchain==0.0.141
+llama_index==0.5.6
+openai==0.27.2
+Pillow==9.5.0
