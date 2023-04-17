@@ -70,3 +70,7 @@ for fig in sorted(os.listdir(prefix+path)):
         ),
         #    width=1100,
            use_container_width=True,)
+        
+image = Image.open('deloitte-logo-white.png')
+st.sidebar.image(image)
+st.sidebar.title("RegGPT V0.0.1")
