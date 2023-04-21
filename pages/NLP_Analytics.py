@@ -2,7 +2,7 @@ import streamlit as st
 import plotly
 import os 
 import json
-
+from PIL import Image
 
 st.set_page_config(page_title = 'AI Reg NLP Vis', layout = 'wide')
 st.markdown("<h1 style='text-align: center; color: grey;'>AI Regulatory Document NLP Analysis</h1>", unsafe_allow_html=True)
