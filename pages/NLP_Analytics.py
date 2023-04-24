@@ -35,6 +35,24 @@ mapping = {'0_doc-topics-pct.json':{
     we can create an interactive view. The slider can select the topic which 
     then lights up red. If you hover over a topic, then general information is 
     given about the topic, including the size of the topic and its corresponding words.'''
+},
+'sentence-dis.json':{
+    'title':'baz',
+    'caption':'''Afol red. If you hover over a topic, then general information is 
+    given about the topic, including the size of the topic and its corresponding words.'''
+},
+'doc-percent.json':{
+    'title':'bar',
+    'caption':'''A representation of the topics in 2D such that
+    we can create an interactive view. The slider can select the topic which 
+    then lights up red. If you hover over a topic, then general information is 
+    given about the topic, including the size of the topic and its corresponding words.'''
+},
+'topic_top_words.json':{
+    'title':'foo',
+    'caption':'''foo
+    p red. If you hover over a topic, then general information is 
+    given about the topic, including the size of the topic and its corresponding words.'''
 }}
 
 st.container()
