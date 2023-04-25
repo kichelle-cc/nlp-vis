@@ -10,6 +10,35 @@ from bokeh.models import (WheelPanTool, BoxZoomTool, ResetTool,  Circle, HoverTo
                           MultiLine, NodesAndLinkedEdges, Plot, TapTool, WheelZoomTool)
 from bokeh.plotting import from_networkx, show, output_file, save, figure
 
+topic_dict = {3: "Risk management framework for AI",
+            4: "Impact of AI in modern society",
+            5: "Regulatory requirements for High risk AI",
+            6: "Discrimination and bias in AI models",
+            7: "Assessing and mitigating risks related to user rights",
+            8: "AI regulatory landscape across different jurisdictions",
+            9: "Processing personal data (fair, safe, compliant)",
+            10: "User protection against AI",
+            2: "Outlier",
+            11: "Implementing data protection controls",
+            12: "Biometric identification",
+            0: "Pros and cons of using AI in financial services",
+            1: "Regulation of intermediary services",
+            13: "ML definition",
+            14: "Explainability, transparency and interpretability of AI",
+            15: "Principles for designing responsible AI",
+            16: "Ethical assessment in the AI development lifecycle",
+            17: "AIDA and high impact AI systems",
+            18: "Testing and monitoring AI systems",
+            19: "Role of EU commission",
+            20: "Developing AI models",
+            21: "Human review and intervention",
+            22: "Enforcing AI regulation and penalties" ,
+            23: "Role of digital service coordinators",
+                24: "Data governance",
+                25: "AI security and 3rd part AI risks",
+                26: "Implementing an AI governance Framework",
+                27: "AI compliance",
+                28: "AI Compliance controls and obligations in EU"}
 prefix = os.getcwd()
 path = '/figs'
 st.set_page_config(page_title = 'AI Reg NLP Vis', layout = 'wide')
@@ -88,35 +117,6 @@ write_c('''Once topics were identified we can understand what they are and how t
 c3, c4 = st.columns(2)
 with c3:
 #     topic_model = BERTopic.load("my_model3")
-#     topic_dict = {3: "Risk management framework for AI",
-#                 4: "Impact of AI in modern society",
-#                 5: "Regulatory requirements for High risk AI",
-#                 6: "Discrimination and bias in AI models",
-#                 7: "Assessing and mitigating risks related to user rights",
-#                 8: "AI regulatory landscape across different jurisdictions",
-#                 9: "Processing personal data (fair, safe, compliant)",
-#                 10: "User protection against AI",
-#                 2: "Outlier",
-#                 11: "Implementing data protection controls",
-#                 12: "Biometric identification",
-#                 0: "Pros and cons of using AI in financial services",
-#                 1: "Regulation of intermediary services",
-#                 13: "ML definition",
-#                 14: "Explainability, transparency and interpretability of AI",
-#                 15: "Principles for designing responsible AI",
-#                 16: "Ethical assessment in the AI development lifecycle",
-#                 17: "AIDA and high impact AI systems",
-#                 18: "Testing and monitoring AI systems",
-#                 19: "Role of EU commission",
-#                 20: "Developing AI models",
-#                 21: "Human review and intervention",
-#                 22: "Enforcing AI regulation and penalties" ,
-#                 23: "Role of digital service coordinators",
-#                     24: "Data governance",
-#                     25: "AI security and 3rd part AI risks",
-#                     26: "Implementing an AI governance Framework",
-#                     27: "AI compliance",
-#                     28: "AI Compliance controls and obligations in EU"}
 #     topic_model.set_topic_labels(topic_dict)
 #     f = topic_model.visualize_barchart(top_n_topics=12, n_words=4,custom_labels=True)
 #     st.plotly_chart(f.update_layout(title=dict(text='')), user_container_width=True)
@@ -157,8 +157,6 @@ with c4:
     graph_renderer.edge_renderer.hover_glyph = MultiLine(line_color='#1d1d1f', line_width='1')
     graph_renderer.edge_renderer.data_source.data["line_width"] = [G.get_edge_data(a,b)['Sentence']**0.33 for a, b in G.edges()]
     graph_renderer.edge_renderer.glyph.line_width = {'field': 'line_width'}
-
-
 
     # interaction hover allow
     graph_renderer.selection_policy = NodesAndLinkedEdges()
