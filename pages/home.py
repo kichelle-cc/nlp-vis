@@ -24,7 +24,7 @@ def write_c(text:str):
     return st.markdown(f"<p style='text-align: center; color: grey;'>{text}</p>", unsafe_allow_html=True)
 
 def draw_plotly(file:json):
-    with open(prefix+path+'/'+file) as f:
+    with open(prefix+path+'\\'+file) as f:
         data = json.load(f)
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
