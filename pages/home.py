@@ -58,30 +58,9 @@ def draw_plotly(file:json):
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
             # paper_bgcolor="LightSteelBlue",
-            # width=1400,
-            # height=800,
             font=dict(size=10, color='Black'),
-            title={
-            'text': ""},
-            # 'text': f"<b>{mapping[fig]['title']}<b>",
-            # 'text': f"",
-            # 'y':0.5,
-            # 'x':0.5,
-            # 'xanchor': 'center',
-            # 'yanchor': 'top', 
-            # 'font':dict(size=23),
-            # 'font_color': "black",},
-        #     xaxis = dict(
-        #     # tickmode = 'linear',
-        #     tickfont = dict(size=9)
-        #     ),
-        #     yaxis = dict(
-        #    tickmode = 'linear',
-        #    tickfont = dict(size=9)
-        #    )),
-        ),
-        #    width=1100,
-           use_container_width=True,)
+            title=dict('text'="")),
+            use_container_width=True)
         return
     
 
@@ -116,10 +95,6 @@ write_c('''Once topics were identified we can understand what they are and how t
 
 c3, c4 = st.columns(2)
 with c3:
-#     topic_model = BERTopic.load("my_model3")
-#     topic_model.set_topic_labels(topic_dict)
-#     f = topic_model.visualize_barchart(top_n_topics=12, n_words=4,custom_labels=True)
-#     st.plotly_chart(f.update_layout(title=dict(text='')), user_container_width=True)
   draw_plotly('topic_top_words.json')
 with c4:
     df = pd.read_csv('completed_v4.csv')
