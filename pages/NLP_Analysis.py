@@ -58,7 +58,7 @@ def draw_plotly(file:json):
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
             # paper_bgcolor="LightSteelBlue",
-            font=dict(size=10, color='Black'),
+            font=dict(size=10, color='grey'),
             title=dict(text="")),
             use_container_width=True)
         return
