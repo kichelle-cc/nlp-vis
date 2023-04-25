@@ -59,7 +59,7 @@ def draw_plotly(file:json):
             margin=dict(l=20, r=20, t=20, b=20),
             # paper_bgcolor="LightSteelBlue",
             font=dict(size=10, color='Black'),
-            title=dict('text'="")),
+            title=dict(text="")),
             use_container_width=True)
         return
     
