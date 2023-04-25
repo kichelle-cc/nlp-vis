@@ -11,7 +11,7 @@ from bokeh.models import (WheelPanTool, BoxZoomTool, ResetTool,  Circle, HoverTo
 from bokeh.plotting import from_networkx, show, output_file, save, figure
 
 prefix = os.getcwd()
-path = '\\figs'
+path = '/figs'
 st.set_page_config(page_title = 'AI Reg NLP Vis', layout = 'wide')
 
 def write_h1(text:str):
@@ -24,7 +24,7 @@ def write_c(text:str):
     return st.markdown(f"<p style='text-align: center; color: grey;'>{text}</p>", unsafe_allow_html=True)
 
 def draw_plotly(file:json):
-    with open(prefix+path+'\\'+file) as f:
+    with open(prefix+path+'/'+file) as f:
         data = json.load(f)
         st.plotly_chart(plotly.io.from_json(data).update_layout(
             margin=dict(l=20, r=20, t=20, b=20),
