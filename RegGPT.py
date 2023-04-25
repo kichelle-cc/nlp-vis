@@ -103,7 +103,8 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         num_out = 600
 
         # temp - crrativity vs reproducability. Setting as 0 to reduce hallucination
-        temp = 0
+        temp = 0.6
+ 
 
         # note max_in + max_out = context length of the model. FOr davincii it is 4097
         # note chunk_size + our wuery  =  max_in
