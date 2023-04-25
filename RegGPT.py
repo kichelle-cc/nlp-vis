@@ -77,7 +77,7 @@ def end_session():
     # the log is essentially an html string
     final_log = st.session_state['conversation_log'].format(date = date,tokens = st.session_state['token_tracker'], cost = round(st.session_state['total_cost'], 5))
     # save the log as .html. Cannot display on streamlit due to some bug.
-    with open("logs/Log_Output.html", "w") as file:
+    with open("/app/nlp-vis/logs/Log_Output.html", "w") as file:
         file.write(final_log)
         st.success("Logs downloaded to the 'logs' folder in the app directory")
 
