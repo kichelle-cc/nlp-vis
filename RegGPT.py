@@ -108,10 +108,10 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         # note max_in + max_out = context length of the model. FOr davincii it is 4097
         # note chunk_size + our wuery  =  max_in
         # model name - using gpt-3.5-turbo as it is optimised for dialogue
-        model_name = "gpt-3.5-turbo"
+        model_name = "text-davinci-002"
 
         # llm predictor
-        llm_predictor = LLMPredictor(llm=ChatOpenAI(model_name=model_name, max_tokens=num_out, temperature=temp))
+        llm_predictor = LLMPredictor(llm=OpenAI(temperature=temp, model_name=model_name))
 
         # prompt helper
         prompt_helper = PromptHelper(max_input_size=max_in, num_output=num_out, max_chunk_overlap=20)
