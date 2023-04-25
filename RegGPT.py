@@ -2,7 +2,7 @@ import os
 import openai
 from PIL import Image
 import streamlit as st
-openai.api_key = st.secrets["OPENAI_API_KEY_2"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 from llama_index.composability import ComposableGraph
 from llama_index import LLMPredictor, PromptHelper, ServiceContext
 from llama_index.logger import LlamaLogger
