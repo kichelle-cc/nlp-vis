@@ -108,7 +108,7 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         # note max_in + max_out = context length of the model. FOr davincii it is 4097
         # note chunk_size + our wuery  =  max_in
         # model name - using gpt-3.5-turbo as it is optimised for dialogue
-        model_name = "text-davinci-003"
+        model_name = "text-davinci-002"
 
         # llm predictor
         llm_predictor = LLMPredictor(llm=OpenAI(temperature=temp, model_name=model_name))
