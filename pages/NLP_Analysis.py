@@ -97,7 +97,7 @@ c3, c4 = st.columns(2)
 with c3:
   draw_plotly('topic_top_words.json')
 with c4:
-    df = pd.read_csv('completed_v4.csv')
+    df = pd.read_csv('figs/completed_v4.csv')
     df.drop(['Unnamed: 0.1', 'Unnamed: 0'], axis =1, inplace = True)
     df.columns = ['Sentence', 'Document ID', 'Topic']
 
