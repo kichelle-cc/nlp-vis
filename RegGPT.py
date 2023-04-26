@@ -54,16 +54,16 @@ st.sidebar.subheader("Search configuration")
 # Add first slider
 n_doc = st.sidebar.slider("Number of documents to search", min_value=1, max_value=13, value=1, step=1)
 # Add second slider
-n_chunk = st.sidebar.slider("Number of text chunks to search",min_value=1, max_value=10, value=1, step=1)
+n_chunk = st.sidebar.slider("Number of text chunks to search per document",min_value=1, max_value=10, value=1, step=1)
 st.sidebar.divider()
 #addtional prompt eng features
-st.sidebar.subheader("Additional prompt engineering methods")
-if st.sidebar.checkbox('Reformat input prompt'):
+st.sidebar.subheader("Prompt Engineering methods")
+if st.sidebar.checkbox('Query Augmentation - Rephrases your query to better convey the intention'):
     input_aug = True
 else:
     input_aug = False
     
-if st.sidebar.checkbox('Use automated query decompose'):
+if st.sidebar.checkbox('Query Decompose - Breaks down complex queries into individual sub-queries. Particularly useful for "compare/contrast" type queries'):
     query_decompose = True
 else:
     query_decompose = False
