@@ -100,7 +100,7 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         max_in = 4096
 
         # max output token - max number of tokens the chatbot will return as response
-        num_out = 600
+        num_out = 150
 
         # temp - crrativity vs reproducability. Setting as 0 to reduce hallucination
         temp = 0
@@ -109,7 +109,7 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         # note max_in + max_out = context length of the model. FOr davincii it is 4097
         # note chunk_size + our wuery  =  max_in
         # model name - using gpt-3.5-turbo as it is optimised for dialogue
-        model_name = "text-davinci-002"
+        model_name = "text-davinci-003"
 
         # llm predictor
         llm_predictor = LLMPredictor(llm=OpenAI(temperature=temp, model_name=model_name))
@@ -274,7 +274,7 @@ def ask_ai(query, n_doc, n_chunk, input_aug, query_decompose):
         total_tokens_used = llm_predictor.total_tokens_used
        
         st.session_state['token_tracker'] += total_tokens_used+tokens_used_formatting
-        cost_for_conv = total_tokens_used * (0.002 / 1000)
+        cost_for_conv = total_tokens_used * (0.02 / 1000)
 
         # total cost for conv
         total_cost_for_conv = cost_for_embedding_query + cost_for_conv + cost_for_formatting
