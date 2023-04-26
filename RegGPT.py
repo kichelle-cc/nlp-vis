@@ -16,6 +16,11 @@ from langchain.chat_models import ChatOpenAI
 # set page config
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
+# title
+def write_h1(text:str):
+    return st.markdown(f"<h1 style='text-align: center; color: grey;'>{text}</h1>", unsafe_allow_html=True)
+write_h1("RegGPT Demo")
+
 # Initialization of a bunnch of session state variables
 if 'token_tracker' not in st.session_state:
     st.session_state['token_tracker'] = 0
